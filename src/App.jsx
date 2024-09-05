@@ -1,29 +1,26 @@
 import { useState, useEffect } from 'react'
-import List from "./components/list/List.jsx";
-import SearchInput from "./components/search/SearchInput.jsx";
 
+
+import List from "./components/list/List.jsx";
+import SearchWrapper from './components/search/SearchWrapper.jsx';
 
 function App() {
-  const [searchVal, setSearchVal] = useState("");
-  const [userLocation, setUserLocation] = useState("");
+  const [userLocation, setUserLocation] = useState([]);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((pos) => {
       console.log(pos);
+      setUserLocation([pos.coords.latitude, pos.coords.longitude])
     });
-    /*setUserLocation(navigator.geolocation.getCurrentPosition()) */
+    //setUserLocation() 
   }, []);
 
-  function handleSearchInputChange(e) {
-    setSearchVal(e.target.value);
-    console.log(e.target.value);
-  }
 
   return (
     <>
     <div className="App">
       <h1>works</h1>
-      <SearchInput searchVal={searchVal} onSearchInputChange={handleSearchInputChange} />
+      <SearchWrapper />
       <List location={userLocation} />
     </div>
     </>
