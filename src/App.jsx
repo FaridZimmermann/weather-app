@@ -9,12 +9,9 @@ function App() {
   const [userLanguage, setUserLanguage] = useState("en");
 
   useEffect(() => {
-    console.log("effect runs")
     navigator.geolocation.getCurrentPosition((pos) => {
-      console.log(pos);
       setUserLocation([pos.coords.latitude, pos.coords.longitude])
     });
-    //setUserLocation() 
   }, []);
 
 
