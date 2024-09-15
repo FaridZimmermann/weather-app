@@ -7,6 +7,7 @@ import LanguageSelectorButton from './components/interface/LanguageSelectorButto
 function App() {
   const [userLocation, setUserLocation] = useState([0,0]);
   const [userLanguage, setUserLanguage] = useState("en");
+  const [locationData, setLocationData] = useState([]);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((pos) => {
@@ -20,7 +21,7 @@ function App() {
     <>
     <div className="App">
       <LanguageSelectorButton onLanguageButtonChange={e => setUserLanguage(e.target.value)} />
-      <List location={userLocation} userLanguage={userLanguage} />
+      <List location={userLocation} userLanguage={userLanguage} setLocationData={setLocationData}/>
     </div>
     </>
   )
