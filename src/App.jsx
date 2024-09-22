@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 
 
 import List from "./components/list/List.jsx";
-import LanguageSelectorButton from './components/interface/LanguageSelectorButton.jsx';
-import TempUnitSelectorButton from './components/interface/TempUnitSelectorButton.jsx';
+import SettingsMenu from './components/menu/SettingsMenu.jsx';
+
 
 function App() {
   const [userLocation, setUserLocation] = useState([0,0]);
@@ -22,8 +22,7 @@ function App() {
   return (
     <>
     <div className="App">
-      <LanguageSelectorButton onLanguageButtonChange={e => setUserLanguage(e.target.value)} />
-      <TempUnitSelectorButton onTempButtonChange={e => setTempUnit(e.target.value)} />
+      <SettingsMenu setUserLanguage={setUserLanguage} setTempUnit={setTempUnit} />
       <List location={userLocation} tempUnit={tempUnit} userLanguage={userLanguage} setLocationData={setLocationData}/>
     </div>
     </>
