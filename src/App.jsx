@@ -8,7 +8,7 @@ import TempUnitSelectorButton from './components/interface/TempUnitSelectorButto
 function App() {
   const [userLocation, setUserLocation] = useState([0,0]);
   const [userLanguage, setUserLanguage] = useState("en");
-  const [userTemp, setUserTemp] = useState("metric")
+  const [tempUnit, setTempUnit] = useState("metric")
   const [locationData, setLocationData] = useState([]);
 
   useEffect(() => {
@@ -23,8 +23,8 @@ function App() {
     <>
     <div className="App">
       <LanguageSelectorButton onLanguageButtonChange={e => setUserLanguage(e.target.value)} />
-      <TempUnitSelectorButton onTempButtonChange={e => setUserTemp(e.target.value)} />
-      <List location={userLocation} userLanguage={userLanguage} setLocationData={setLocationData}/>
+      <TempUnitSelectorButton onTempButtonChange={e => setTempUnit(e.target.value)} />
+      <List location={userLocation} tempUnit={tempUnit} userLanguage={userLanguage} setLocationData={setLocationData}/>
     </div>
     </>
   )
