@@ -1,16 +1,19 @@
 import { useState, useEffect } from 'react'
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faBars} from "@fortawesome/free-solid-svg-icons";
 
 import List from "./components/list/List.jsx";
 import SettingsMenu from './components/menu/SettingsMenu.jsx';
 
+import "./App.css";
 
 function App() {
   const [userLocation, setUserLocation] = useState([0,0]);
   const [userLanguage, setUserLanguage] = useState("en");
   const [tempUnit, setTempUnit] = useState("metric")
   const [locationData, setLocationData] = useState([]);
-
+  const [showSettings, setShowSettings] = useState(false);
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((pos) => {
       setUserLocation([pos.coords.latitude, pos.coords.longitude])
@@ -22,7 +25,8 @@ function App() {
   return (
     <>
     <div className="App">
-      <SettingsMenu setUserLanguage={setUserLanguage} setTempUnit={setTempUnit} />
+    <FontAwesomeIcon icon={faBars} size="3x"/>
+     {showSettings && <SettingsMenu setUserLanguage={setUserLanguage} setTempUnit={setTempUnit} /> }
       <List location={userLocation} tempUnit={tempUnit} userLanguage={userLanguage} setLocationData={setLocationData}/>
     </div>
     </>
