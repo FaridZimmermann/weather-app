@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faBars} from "@fortawesome/free-solid-svg-icons";
-
 import List from "./components/list/List.jsx";
 import SettingsMenu from './components/menu/SettingsMenu.jsx';
 
@@ -25,7 +22,7 @@ function App() {
   return (
     <>
     <div className="App">
-    <FontAwesomeIcon icon={faBars} size="3x" onClick={() => {setShowSettings(!showSettings)}}/>
+    <i className="fa-solid fa-bars" size="3x" onClick={() => {setShowSettings(!showSettings)}}></i>
      {showSettings && <SettingsMenu setUserLanguage={setUserLanguage} setTempUnit={setTempUnit} closeSettings={() => {setShowSettings(false)}}/> }
       <List location={userLocation} tempUnit={tempUnit} userLanguage={userLanguage} setLocationData={setLocationData}/>
     </div>
