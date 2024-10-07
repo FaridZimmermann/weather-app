@@ -25,8 +25,8 @@ function App() {
   return (
     <>
     <div className="App">
-    <FontAwesomeIcon icon={faBars} size="3x"/>
-     {showSettings && <SettingsMenu setUserLanguage={setUserLanguage} setTempUnit={setTempUnit} /> }
+    <FontAwesomeIcon icon={faBars} size="3x" onClick={() => {setShowSettings(!showSettings)}}/>
+     {showSettings && <SettingsMenu setUserLanguage={setUserLanguage} setTempUnit={setTempUnit} closeSettings={() => {setShowSettings(false)}}/> }
       <List location={userLocation} tempUnit={tempUnit} userLanguage={userLanguage} setLocationData={setLocationData}/>
     </div>
     </>
