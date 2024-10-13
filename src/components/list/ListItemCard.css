@@ -12,3 +12,11 @@
   color: white;
   border: 1px solid rgb(20, 143, 204);
 }
+
+.list-item-card i {
+
+}
+
+.list-item-card i:hover {
+    color: red;
+}
