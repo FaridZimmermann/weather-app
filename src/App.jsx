@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 
+import {SettingsProvider} from "./components/contexts/SettingsContext.jsx";
+
 import List from "./components/list/List.jsx";
 import SettingsMenu from './components/menu/SettingsMenu.jsx';
+
 
 import "./App.css";
 
@@ -21,11 +24,13 @@ function App() {
 
   return (
     <>
+    <SettingsProvider>
     <div className="App">
     <i className="fa-solid fa-bars" size="3x" onClick={() => {setShowSettings(!showSettings)}}></i>
      {showSettings && <SettingsMenu setUserLanguage={setUserLanguage} setTempUnit={setTempUnit} closeSettings={() => {setShowSettings(false)}}/> }
       <List location={userLocation} tempUnit={tempUnit} userLanguage={userLanguage} setLocationData={setLocationData}/>
     </div>
+    </SettingsProvider>
     </>
   )
 }

@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+
+import {SettingsContext} from "../contexts/SettingsContext.jsx"
 
 import ListItem from "./ListItem.jsx";
 import Loader from "./Loader.jsx";
@@ -9,6 +11,8 @@ import parseWeatherData from "../../helpers/parseWeatherData.js";
 export default function List(props) {
   const [weatherData, setWeatherData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const settings = useContext(SettingsContext);
+  console.log("Settings", settings)
   const [lat, lon] = props.location;
   const {get} = useFetch(`https://api.openweathermap.org/data/2.5/forecast?appid=${process.env.API_KEY}&lang=${props.userLanguage}&lat=${lat}&lon=${lon}&days=7&units=${props.tempUnit}`)
   
