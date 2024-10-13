@@ -35,7 +35,7 @@ export default function List(props) {
     {isLoading && <Loader />}
     <ul className="list">
       {weatherData.map((item, i) => (
-        <ListItem weatherItem={item} key={i} cardOpen={cardOpen} onClick={() => setCardOpen(true)} closeCard={() => setCardOpen(false)}/>
+        <ListItem weatherItem={item} key={i} cardOpen={cardOpen} setCardOpen={setCardOpen}/>
       ))}
     </ul>
     </>
