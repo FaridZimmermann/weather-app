@@ -12,9 +12,9 @@ export default function List(props) {
   const [weatherData, setWeatherData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const settings = useContext(SettingsContext);
-  console.log("Settings", settings)
+  console.log(settings);
   const [lat, lon] = props.location;
-  const {get} = useFetch(`https://api.openweathermap.org/data/2.5/forecast?appid=${process.env.API_KEY}&lang=${props.userLanguage}&lat=${lat}&lon=${lon}&days=7&units=${props.tempUnit}`)
+  const {get} = useFetch(`https://api.openweathermap.org/data/2.5/forecast?appid=${process.env.API_KEY}&lang=${settings.userLanguage}&lat=${lat}&lon=${lon}&days=7&units=${settings.tempUnit}`)
   
   useEffect(() => {
     (async () => {
@@ -31,7 +31,7 @@ export default function List(props) {
         }
     })();
 
-  }, [props.location, props.userLanguage, props.tempUnit]);
+  }, [props.location, settings.userLanguage, settings.tempUnit]);
 
   return (
     <>
