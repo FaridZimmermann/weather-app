@@ -12,7 +12,6 @@ export default function List(props) {
   const [weatherData, setWeatherData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const settings = useContext(SettingsContext);
-  console.log(settings);
   const [lat, lon] = props.location;
   const {get} = useFetch(`https://api.openweathermap.org/data/2.5/forecast?appid=${process.env.API_KEY}&lang=${settings.userLanguage}&lat=${lat}&lon=${lon}&days=7&units=${settings.tempUnit}`)
   

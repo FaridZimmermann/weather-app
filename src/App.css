@@ -1,4 +1,11 @@
 
+.App {
+    font-family: "Overpass", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;  
+}
+
 .fa-bars {
     height: 2rem;
     width: 2rem;
