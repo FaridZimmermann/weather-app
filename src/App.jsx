@@ -26,9 +26,9 @@ function App() {
     <>
     <SettingsProvider>
     <div className="App">
-    <i className="fa-solid fa-bars" size="3x" onClick={() => {setShowSettings(!showSettings)}}></i>
-     {showSettings && <SettingsMenu setUserLanguage={setUserLanguage} setTempUnit={setTempUnit} closeSettings={() => {setShowSettings(false)}}/> }
       <List location={userLocation} tempUnit={tempUnit} userLanguage={userLanguage} setLocationData={setLocationData}/>
+      <SettingsMenu setUserLanguage={setUserLanguage} setTempUnit={setTempUnit} closeSettings={() => {setShowSettings(false)}}/> 
+
     </div>
     </SettingsProvider>
     </>

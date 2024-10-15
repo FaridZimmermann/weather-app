@@ -8,6 +8,8 @@ import Loader from "./Loader.jsx";
 import useFetch from "../../hooks/useFetch.js";
 import parseWeatherData from "../../helpers/parseWeatherData.js";
 
+import "./List.css";
+
 export default function List(props) {
   const [weatherData, setWeatherData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
