@@ -1,3 +1,6 @@
 .settings-language {
-    display: inline-block;
+    display: block;
+}
+.settings-language button {
+    margin: 0 0.5rem;
 }

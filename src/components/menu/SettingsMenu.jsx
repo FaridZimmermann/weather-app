@@ -1,6 +1,6 @@
 import {useContext} from "react";
 
-import { SettingsContext } from "../contexts/SettingsContext.jsx";
+import { SettingsContext } from "../../contexts/SettingsContext.jsx";
 
 import LanguageSelector from './interface/LanguageSelector.jsx';
 import TempUnitSelector from './interface/TempUnitSelector.jsx';

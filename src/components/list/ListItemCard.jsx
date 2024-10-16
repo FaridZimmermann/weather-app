@@ -1,5 +1,5 @@
 import {useContext} from "react";
-import { SettingsContext } from "../contexts/SettingsContext";
+import { SettingsContext } from "../../contexts/SettingsContext";
 import { tempSymb } from "../../helpers/valueMaps";
 
 import "./ListItemCard.css";

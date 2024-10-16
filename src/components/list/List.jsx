@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 
-import {SettingsContext} from "../contexts/SettingsContext.jsx"
+import {SettingsContext} from "../../contexts/SettingsContext.jsx"
 
 import ListItem from "./ListItem.jsx";
 import Loader from "./Loader.jsx";
@@ -11,6 +11,7 @@ import parseWeatherData from "../../helpers/parseWeatherData.js";
 import "./List.css";
 
 export default function List(props) {
+
   const [weatherData, setWeatherData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const settings = useContext(SettingsContext);
@@ -23,7 +24,6 @@ export default function List(props) {
         try {
         const data = await get();
         console.log(parseWeatherData(data));
-        props.setLocationData(data.city);
         setWeatherData(parseWeatherData(data));
         } catch(err) {
             console.error(err);
