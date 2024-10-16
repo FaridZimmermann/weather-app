@@ -24,7 +24,7 @@ function App() {
   return (
     <>
     <div className="App">
-      <h2>{settings.userLanguage === "en" ? "Local Weather Forecast" : "Wettervorhersage für Ihre Umgebung" }</h2>
+      <h3 className="header">{settings.userLanguage === "en" ? "Local Weather Forecast" : "Wettervorhersage für Ihre Umgebung" }</h3>
       <List location={userLocation}/>
       <SettingsMenu /> 
 

@@ -1,13 +1,16 @@
 .list-item {
     display:inline-block;
-  border: 1px solid rgb(20, 143, 204);
+  border-left: 1px solid rgb(20, 143, 204);
+
   border-radius: 5%;
   text-align: center;
   margin: 1rem;
   padding: 0.5rem 2rem;
-
 }
 
-.list-item:hover {
-    cursor: pointer;
+.list-item h3 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-weight: bold;
 }
