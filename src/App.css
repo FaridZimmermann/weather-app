@@ -6,6 +6,13 @@
     font-weight: <weight>;
     font-style: normal;  
 }
+.App h2 {
+    font-family: "Dosis", sans-serif;
+    font-size: 2.5rem;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;  
+}
 
 .fa-bars {
     height: 2rem;
