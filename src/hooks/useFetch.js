@@ -3,7 +3,6 @@ export default function useFetch(baseUrl) {
 
 
         async function get() {
-            console.log(baseUrl)
             const response = await fetch(baseUrl);
             const data = await response.json();
             if (!response.ok) {
