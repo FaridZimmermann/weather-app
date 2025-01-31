@@ -5,7 +5,7 @@ import { SettingsContext } from "../../contexts/SettingsContext.jsx";
 import LanguageSelector from './interface/LanguageSelector.jsx';
 import TempUnitSelector from './interface/TempUnitSelector.jsx';
 
-import "./settingsMenu.css";
+import "./SettingsMenu.css";
 
 export default function SettingsMenu(props) {
 
