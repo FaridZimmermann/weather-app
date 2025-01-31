@@ -23,7 +23,6 @@ export default function List(props) {
 
         try {
         const data = await get();
-        console.log(parseWeatherData(data));
         setWeatherData(parseWeatherData(data));
         } catch(err) {
             console.error(err);

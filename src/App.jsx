@@ -12,7 +12,6 @@ function App() {
   const [userLocation, setUserLocation] = useState([0,0]);
 
   const settings = useContext(SettingsContext);
-  console.log(settings)
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((pos) => {
       setUserLocation([pos.coords.latitude, pos.coords.longitude])
