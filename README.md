@@ -1,4 +1,4 @@
-# Url Shortener - MERN Stack
+# Weather APP - React
 
 **LIVE-Example** @ https://farids-weather-app.netlify.app/
 
